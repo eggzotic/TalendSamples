@@ -5,6 +5,8 @@
     <contextParameter comment="" name="outfile1" prompt="outfile1?" promptNeeded="false" type="id_String" value="OutFile1.txt"/>
     <contextParameter comment="" name="outfile2" prompt="outfile2?" promptNeeded="false" type="id_String" value="OutFile2.txt"/>
     <contextParameter comment="" name="outfile3" prompt="outfile3?" promptNeeded="false" type="id_String" value="OutFile3.txt"/>
+    <contextParameter comment="" name="inFolder" prompt="inFolder?" promptNeeded="false" type="id_String" value="C:\Users\rshepherd\OneDrive\Documents\OSSG\Talend\repos\TalendSamples\"/>
+    <contextParameter comment="" name="inFile" prompt="inFile?" promptNeeded="false" type="id_String" value="MultiColumns.txt"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -48,7 +50,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:u6hr20yueyIaHPx6O0q6Y9yoXGfZTo9qY7vr8J6a"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:7Oyzm5AQGubNCJXJXJCGmsRAUMS/7oaHxs67epnI"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -83,7 +85,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:RkPNGlO19GaKboOlH4kfKgcmCOJk+cFdJMKDyEV4"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:OatoL/ghrlGGbg2QQgz0UFGrVfEIq/nIidIL2Nto"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -123,7 +125,7 @@
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_cioQsHZ2EeucY_ZNJyprbQ - threeColumns"/>
     <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/rshepherd/OneDrive/Documents/OSSG/Talend/repos/TalendSamples/MultiColumns.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.inFolder + context.inFile"/>
     <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -265,7 +267,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/rshepherd/OneDrive/Documents/OSSG/Talend/repos/TalendSamples/OutFile2.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.outFolder + context.outfile2"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -302,7 +304,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_3"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/rshepherd/OneDrive/Documents/OSSG/Talend/repos/TalendSamples/OutFile3.txt&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.outFolder + context.outfile3"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" show="false" value="true"/>
     <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -329,7 +331,7 @@
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
     <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="LABEL" value="OutFile1"/>
+    <elementParameter field="TEXT" name="LABEL" value="OutFile3"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="oneColumn" name="tFileOutputDelimited_3">
       <column comment="" key="false" length="0" name="textColumn" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
@@ -408,13 +410,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_35feeb46-08bf-407c-9582-61b7bc0915f5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>N3mv7I8oN6at35yJP1wrf2bqKVb7i926MEPWaV60Ixu+xtLTaRpJiqGp+ZXEmjfOXNSxrp8BSCCc
-z6C7iP+DrQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5c0aba4f-647b-4233-acac-777e7d42d270"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jfYEL7DbMmfn+dMcZwQFod+NsdjcDrVNumldYMdtaboMqg8rhNsjmRFZT59ynWnZZIYVkY3K3MOv
-c2wUMhgU5g==</DigestValue></Reference></SignedInfo><SignatureValue>WXVKTm3uYlSZ+N/b39/dEMsX5231e8PDtZo/gYodMVHpBNvl5S9w/NkF/RyhHE9f+z/fSiZm1ELJ
-n+GXwAFnC64+3jqZj6AlxkeYAdCc1Cd6f6iRjQ+nXF1acwD83qbNtcOzaOLKeFXddvSbQf9SO/Le
-VmBRTCThXbCWNBpxWqcs5W7jydkvaS+JNQRFNyzRfnzYDUHRmKoEmD7i2Abk66777wQG8bnL9Vn/
-HWrkHWIZU4b17YB3F+pbtygdJJx2ShSM1SJcyA5juOav2jfddwcqoMBC7XVFBI1qXDA6bZYdxWSp
-+vVVKDzu/OHvvsmiTCkbP4jeNMx0FypJDRBUSw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_178685f4-6159-4a11-bbd2-a128b56b2b88"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GKCFRtALB+wzacSfSVQfacWD9PL2DHrG0GAI8iNyAGT06ewGHIEoO5lsNmaV8oLv0Uv/TbsNala4
+WMMtk4B8Lg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b047979d-da90-49b3-b401-e6238d481e79"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CXqWDlqSSrCpOz/26YRvd01FPItL3IdK5BoLT7s5IJ0yfKOjSkw9/U6DHK4bO2YzJGOfT8NQbQzX
+jjTaMBA8aQ==</DigestValue></Reference></SignedInfo><SignatureValue>j2fBuk1v6wP3XN+2Deq67SaccD3MbUN0Eo3VNtfC3lsRrv+YWiboJYB2aiF2IwPKP7YGTkZBK1hS
+ie2ZhH1yrDgfnGsgMH5b7/k49LMA0ccuiCs63iYJq0IB98hKaTrIIlPs7W+duwubOV0PjILsuVHg
+zwfw7+NcVbgM/0XFcDi+N0jDHYayiMhgfJlY/AwTW1mM3s4bhtnOGSF03zOHytp2CwYkHgrlXkFF
+1wfa/uZh/O4siDt2JtokqYOLusfuQMKHV9/mvWUUnNFQBrkVExgiccEmOQC3/qqqN3Qyq91Nz8LI
+DtK+9mk4Vaxi7/e1E8sanq0P/xLU4xjnE2Bi8Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -436,4 +438,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5c0aba4f-647b-4233-acac-777e7d42d270" Target="#_35feeb46-08bf-407c-9582-61b7bc0915f5"><Timestamp>2021-02-24 23:33:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b047979d-da90-49b3-b401-e6238d481e79" Target="#_178685f4-6159-4a11-bbd2-a128b56b2b88"><Timestamp>2021-02-24 23:35:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
