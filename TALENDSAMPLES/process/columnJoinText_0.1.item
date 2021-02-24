@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:qGTOZnA0qSQxG6BfpmVXdKipqafAXvdkUWos6k33"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:6Q+xmpHD0uz22HP3w6IUk/R8P+h5hHxBgT52YDLb"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:tXLCM8GU75sNepC0cWdQndTS2iVVyc8J7ZDBFdE5"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:hPoJtvEOUSvWWLZoVFfkSnQl8fV8mKLgM8G8lIki"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -112,7 +112,7 @@
     <routinesParameter id="_NhUKQHZNEeunIa-KkP55VQ" name="TalendStringUtil"/>
     <routinesParameter id="_NhESoHZNEeunIa-KkP55VQ" name="TalendString"/>
   </parameters>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="288">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_Q7N3UHbnEeuMcowyZaCUog - oneColumn"/>
@@ -164,7 +164,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="288">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -188,9 +188,9 @@
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="indexedCol1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;row1&quot;,1,1)" name="rowNum" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.textColumn " name="textColumn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="col1.textColumn " name="textColumn" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="col1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="textColumn" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
@@ -237,7 +237,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="288">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="736" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -268,7 +268,7 @@
       <column comment="" key="false" length="0" name="textColumn_3" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_2"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_Q7N3UHbnEeuMcowyZaCUog - oneColumn"/>
@@ -320,7 +320,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -344,14 +344,14 @@
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="indexedCol2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;row2&quot;,1,1)" name="rowNum" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row2.textColumn " name="textColumn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="col2.textColumn " name="textColumn" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="col2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="textColumn" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="64">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_3"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_Q7N3UHbnEeuMcowyZaCUog - oneColumn"/>
@@ -403,7 +403,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="512" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -427,16 +427,16 @@
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="indexedCol3" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;row3&quot;,1,1)" name="rowNum" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row3.textColumn " name="textColumn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="col3.textColumn " name="textColumn" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="col3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="textColumn" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_2">
+  <connection connectorName="FLOW" label="col1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="col1"/>
   </connection>
   <connection connectorName="FLOW" label="indexedCol1" lineStyle="0" metaname="indexedCol1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -454,34 +454,38 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="joined"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tMap_3">
+  <connection connectorName="FLOW" label="col2" lineStyle="0" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="col2"/>
   </connection>
   <connection connectorName="FLOW" label="indexedCol2" lineStyle="8" metaname="indexedCol2" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="indexedCol2"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tMap_4">
+  <connection connectorName="FLOW" label="col3" lineStyle="0" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="col3"/>
   </connection>
   <connection connectorName="FLOW" label="indexedCol3" lineStyle="8" metaname="indexedCol3" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="indexedCol3"/>
   </connection>
+  <note opaque="true" posX="640" posY="96" sizeHeight="161" sizeWidth="161" text="File1 is guaranteed&#13;&#10;to have no fewer lines&#13;&#10;than all the others,&#13;&#10;due to it being the&#13;&#10;1st column of text&#13;&#10;extracted from the&#13;&#10;original multi-column&#13;&#10;file.">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="128;255;255"/>
+    <elementParameter field="COLOR" name="NOTE_LINECOLOR" value="192;192;192"/>
+  </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e9915c4a-3649-45ff-9db5-bc1a9ccb30b5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kPKK0j/gXCm1qkaP/ep132DIfwlrOS5Nc5GYY/M1UyCuWHE4HwMawuuYnaJRWowflhISetsCBiLL
-nmi57P/g1Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5050f559-65c3-4658-8d5d-5d2efb70443f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8JVgK6JCwgaQJoRNVujuPeG3F676T7UaeQENLCG3XwSvLz/SqEf/Ws+WakEdI3Sol9oxJJLP0vlX
-k/90K837hQ==</DigestValue></Reference></SignedInfo><SignatureValue>NQ/nVIOlJBy5+44apPRVooZtErOjvN209IOn6GREXw+UYKoZruaz5Nmo3XoLRqSpJYxD+l7OtKVN
-0rBxpSxG3kNnPNxLNzWbq5BzfyKxxCpB0fKOnDkE1kAEyybQ/EpoUgORn5vm2/3e5c/GpIDjazdU
-2ujGIKrbC4/bNUENZIih0FW1mEvil/jNEW1TRKQpk2huWyVDVYwwPiQAoiXK0djAZyRbrrLqdUGC
-n1IO5KgJPBDykvGGwns9bOgs1kwRF7yaInEiibPq8rCIxRkreePiLT7OAOMzvV/u7NDajlkLyNBA
-21zmPYXmIEOur4k/NDCfGopU4DMDW999M3QXtA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9ad2cd22-3a01-482e-8bfa-2bc613bbb2e8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JsSg8Ti0S9sWSLC5gDQK2KAU66N+ksko+3xpMgmw0DngMv0D6N+42pJcdLl7mQ5U+ACPAmTFdasL
+tEHOxnv3IQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4b741052-3a07-4c8e-806a-2ae8eda30b5f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2EQMUqsSdbIyi3GDeAhsuVBqiaHi6+2qWxIR1DyVMEVJ8Xhizt1Wz+K7JXvKEfdOhY1Bm88xEA0G
+mOaU5ZRoYw==</DigestValue></Reference></SignedInfo><SignatureValue>Db01unPuUIeYzTKy2gPK0Ypy836cP0lWtuYIEaDEaiE1e1hO22O9eHxclkpz2vWJN8gq1dP2ykGO
+3iFBX1oKFUB2EF2CxDE3++YguP1c2MrmJuPFFfNGj1D/RvuYF+wRmVXCKgC27kvRdGjBLscNvDCt
+rkigSIC2eMxs4p0a0kX+qJiVxr/Np+GSmG4cu7mgLQ4q1BlYVpzDHKWaxSEM12HVJf+zYoyynoyb
+sAva7+bZM/sPnbEYVUVmJMnVOYrw2Qh67bFlelzhbcj+9wZ/w664ZjgGkoKZeOn5zjAo9tYugJdr
+K0bZfm5U4bzX0PPH1kdvfup0vGiWCghnZqI9JA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -503,4 +507,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5050f559-65c3-4658-8d5d-5d2efb70443f" Target="#_e9915c4a-3649-45ff-9db5-bc1a9ccb30b5"><Timestamp>2021-02-24 22:41:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4b741052-3a07-4c8e-806a-2ae8eda30b5f" Target="#_9ad2cd22-3a01-482e-8bfa-2bc613bbb2e8"><Timestamp>2021-02-24 22:56:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
