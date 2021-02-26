@@ -47,7 +47,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:G/94j78RmZgiEkVrFcV78HucuetBGBYDUB9kfTez"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:J+eI2EpB2y8vyDTboZu0gyG+Ti4IJpRqE5CE+umE"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -82,7 +82,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:+Qu6cwqSj+pGA0mijZDV3rEaLzgeA+l/+Y1MBL98"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:vyLYgdOu6lJ6B1exb9qwiJkHuTlTq7abirKyFGol"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -117,13 +117,13 @@
     <routinesParameter id="_NhUKQHZNEeunIa-KkP55VQ" name="TalendStringUtil"/>
     <routinesParameter id="_NhESoHZNEeunIa-KkP55VQ" name="TalendString"/>
   </parameters>
-  <node componentName="tFileExist" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="352">
+  <node componentName="tFileExist" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileExist_1"/>
     <elementParameter field="FILE" name="FILE_NAME" value="context.file"/>
     <elementParameter field="TEXT" name="LABEL" value="fileExistsCheck"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileProperties" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="352">
+  <node componentName="tFileProperties" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileProperties_1"/>
     <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileExist_1_FILENAME&quot;))"/>
     <elementParameter field="CHECK" name="MD5" value="false"/>
@@ -139,7 +139,7 @@
       <column key="false" length="20" name="mtime_string" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="352">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_3"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;canRead&quot;"/>
@@ -157,7 +157,7 @@
       <column key="false" length="20" name="mtime_string" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="224">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_2"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;canNotReadMessage&quot;"/>
@@ -167,7 +167,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_2"/>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="224">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;canNotReadMessage&quot;"/>
@@ -177,7 +177,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_1"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="512">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -191,12 +191,13 @@
     <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
     <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+    <elementParameter field="TEXT" name="LABEL" value="setCanRead"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFixedFlowInput_1">
       <column comment="" key="false" length="-1" name="canReadMessage" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="512">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -215,6 +216,7 @@
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="LABEL" value="notifyCanRead"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_1">
       <column comment="" key="false" length="-1" name="canReadMessage" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -233,21 +235,21 @@
     <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Boolean)globalMap.get(&quot;tFileExist_1_EXISTS&quot;))"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canFind"/>
   </connection>
-  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFileExist_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tFileExist_1" target="tSetGlobalVar_1">
+  <connection connectorName="RUN_IF" label="cannotFind" lineStyle="6" metaname="tFileExist_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tFileExist_1" target="tSetGlobalVar_1">
     <elementParameter field="MEMO_JAVA" name="CONDITION" value="!((Boolean)globalMap.get(&quot;tFileExist_1_EXISTS&quot;))"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If3"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="cannotFind"/>
   </connection>
   <connection connectorName="FLOW" label="fileProperties" lineStyle="0" metaname="tFileProperties_1" offsetLabelX="0" offsetLabelY="0" source="tFileProperties_1" target="tSetGlobalVar_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="fileProperties"/>
   </connection>
-  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFileProperties_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tFileProperties_1" target="tSetGlobalVar_2">
-    <elementParameter field="MEMO_JAVA" name="CONDITION" value="!(Boolean)globalMap.get(&quot;canRead&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If5"/>
-  </connection>
-  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFileProperties_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tFileProperties_1" target="tFixedFlowInput_1">
+  <connection connectorName="RUN_IF" label="canRead" lineStyle="6" metaname="tFileProperties_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tFileProperties_1" target="tFixedFlowInput_1">
     <elementParameter field="MEMO_JAVA" name="CONDITION" value="(Boolean)globalMap.get(&quot;canRead&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If8"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canRead"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="cannotRead" lineStyle="6" metaname="tFileProperties_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tFileProperties_1" target="tSetGlobalVar_2">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="!(Boolean)globalMap.get(&quot;canRead&quot;)"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="cannotRead"/>
   </connection>
   <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tSetGlobalVar_2" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_2" target="tDie_1">
     <elementParameter field="MEMO_JAVA" name="CONDITION" value="true"/>
@@ -261,15 +263,15 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <note opaque="true" posX="64" posY="352" sizeHeight="33" sizeWidth="96" text="Start here">
+  <note opaque="true" posX="96" posY="64" sizeHeight="33" sizeWidth="64" text="Start">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
   </note>
-  <note opaque="true" posX="704" posY="32" sizeHeight="65" sizeWidth="96" text="Failure exits&#13;&#10;here">
+  <note opaque="true" posX="608" posY="32" sizeHeight="65" sizeWidth="96" text="Failure exits&#13;&#10;here">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="255;0;0"/>
     <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
   </note>
-  <note opaque="true" posX="1024" posY="512" sizeHeight="65" sizeWidth="96" text="Success&#13;&#10;exits here">
+  <note opaque="true" posX="416" posY="416" sizeHeight="65" sizeWidth="96" text="Success&#13;&#10;exits here">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="0;128;255"/>
     <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
   </note>
@@ -303,13 +305,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_828ef755-b215-42a3-9ae5-b79a2987c331"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QIXjhzm968k6R9j/t+k15aDzKWSDr+ldrjX+fB+9KmKNTplg24bX/9ZMk+WKJENqb4ZffodEqhxj
-LsNQj+XMvw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bf150328-b128-44d2-bb20-b8d0a32cf186"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>c4hDWs+xSBU/sc6wL0+Vid6oezjRSbHHtUCG1bMbve6qNfLBfGxd7ux/0GXpKbMwJDDfzm3zLdBL
-ruD3ruBaZA==</DigestValue></Reference></SignedInfo><SignatureValue>HZs4ZUKu3PQeCIqTCU1IZxwNBOWVnmFMrdSoXCNp70krxMzAetEYy+yXdOwkbZsaAaPF/ZSsGPXn
-VEa+c+fbYpweKMB8w51vgI16y91Az4/kyE/fIX3yyES3tIyb9fwtbRVu1/SWwnW9M+jac6ONsItg
-L4H1fc9HrrWmkismk97kxc2ilitAruHY6nseHc1CfImF8/ZUsUFf/y61U7lMDwQcFHV9pQnNCcmY
-8X+aAYoCgJ8YqODTkjI2m0VtvHrKM3ixe7jB94Fu+P8vEm3X8uUiWszE6Mu0GUax53LekFU1LGgI
-vzkfgW6/QiexCJpJQWTPZX/IuQJJZTBEs1wIAA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2eb1bae7-e9df-416d-8394-e330d1ddf8eb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MWT5gsxv5eLDSO96cwpT/ciXUYHooxRXUlqvk3+KVPnOoMLsTXk4LePfgL7DOq5VOC41yqSpF3LH
+d9Iu557rsQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0187a6d3-c323-4d9d-b6e5-ddda8ae2dbbc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lfPblG18NeFvLNUFHkA/uYadG6weiJk1sFPymFI4cvuYhV3kTiYccWb+8bhHsUwZxVYWpSsdOjEC
+IkHCZ1MxYw==</DigestValue></Reference></SignedInfo><SignatureValue>QhZslSH2Q3zuIuFxGyPdu/nKei+dQPKippRLGruns4pmwtMW3zU19786yP+HNce9nrf5zD9Fn1bp
+1xK1Dcihdyx2W7dsYqnvuc7bS7zUL72jqbw1eKwBZBoLwhY0xlIIWCbWaggs/kXXoK4OgfoqOC4a
+Wgq5D7a4S16e3QTdrBhvMVilXGxfSrPf2IyOjBh/VRxzqhp+o780k7R+XHRIywNIa05G2NdgVVcN
+9iK33SkRt83U4A1HRawDwNrHszXGW1cEPNEit3JPkCTGTWz+ckGxJAx/WiPrbIjtk5QhuwEEEdd3
+j3E8C34ZdA+SJMKYce9mTSECjWRYvW9VrTwo6w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -331,4 +333,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bf150328-b128-44d2-bb20-b8d0a32cf186" Target="#_828ef755-b215-42a3-9ae5-b79a2987c331"><Timestamp>2021-02-26 05:02:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0187a6d3-c323-4d9d-b6e5-ddda8ae2dbbc" Target="#_2eb1bae7-e9df-416d-8394-e330d1ddf8eb"><Timestamp>2021-02-26 05:09:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
