@@ -45,7 +45,7 @@
       <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-      <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:6E2eNFthMyCw8blGmoZx5xX4xnfK6DzmQETuyB/9"/>
+      <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:i5ecBwPMIRUqchmprQrfoipTUgZ/UHGLz8uq1RuJ"/>
       <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -81,7 +81,7 @@
       <routinesParameter id="_NhUKQHZNEeunIa-KkP55VQ" name="TalendStringUtil"/>
       <routinesParameter id="_NhESoHZNEeunIa-KkP55VQ" name="TalendString"/>
     </parameters>
-    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="192">
+    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
       <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
       <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -101,7 +101,7 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="192">
+    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="192">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_3"/>
       <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
       <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -126,7 +126,7 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="64">
+    <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="64">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
       <elementParameter field="TEXT" name="MESSAGE" value="&quot;Exited with error - check this log for more info&quot;"/>
       <elementParameter field="TEXT" name="CODE" value="4"/>
@@ -137,7 +137,7 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="192">
+    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="192">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_2"/>
       <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
       <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -157,7 +157,7 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="192">
+    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="192">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
       <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
       <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -171,7 +171,7 @@
       <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
       <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
       <elementParameter field="TABLE" name="LENGTHS" show="false">
-        <elementValue elementRef="SCHEMA_COLUMN" value="message"/>
+        <elementValue elementRef="SCHEMA_COLUMN" value="canNotMessage"/>
         <elementValue elementRef="LENGTH" value="10"/>
       </elementParameter>
       <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -182,13 +182,13 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tFileExist" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="352">
+    <node componentName="tFileExist" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="352">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileExist_1"/>
       <elementParameter field="FILE" name="FILE_NAME" value="context.folder + context.file"/>
       <elementParameter field="TEXT" name="LABEL" value="fileExistsCheck"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     </node>
-    <node componentName="tFileProperties" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="352">
+    <node componentName="tFileProperties" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="352">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileProperties_1"/>
       <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileExist_1_FILENAME&quot;))"/>
       <elementParameter field="CHECK" name="MD5" value="false"/>
@@ -204,7 +204,7 @@
         <column key="false" length="20" name="mtime_string" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="928" posY="352">
+    <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="352">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
       <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;// RLS: mode_string contains an 'r' =&gt; file is readable&#10;context.fileReadable = fileProperties.mode_string.indexOf('r') &gt;= 0;"/>
       <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -212,7 +212,7 @@
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJavaRow_1"/>
     </node>
-    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="512">
+    <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="512">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
       <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
       <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -232,7 +232,7 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
-    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="512">
+    <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="512">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
       <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
       <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -265,9 +265,9 @@
       <elementParameter field="MEMO_JAVA" name="CONDITION" value="true"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If1"/>
     </connection>
-    <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tLogRow_1">
+    <connection connectorName="FLOW" label="canNotMessage" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tLogRow_1">
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canNotMessage"/>
     </connection>
     <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tDie_1">
       <elementParameter field="MEMO_JAVA" name="CONDITION" value="true"/>
@@ -293,27 +293,30 @@
       <elementParameter field="MEMO_JAVA" name="CONDITION" value="!context.fileReadable"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canNotRead"/>
     </connection>
-    <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tLogRow_2">
+    <connection connectorName="FLOW" label="canMessage" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tLogRow_2">
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canMessage"/>
     </connection>
-    <note opaque="true" posX="384" posY="160" sizeHeight="65" sizeWidth="96" text="File NOT&#13;&#10;found">
+    <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="TRIGGER_OUTPUT_1">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+    </connection>
+    <note opaque="true" posX="256" posY="160" sizeHeight="65" sizeWidth="96" text="File NOT&#13;&#10;found">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
-    <note opaque="true" posX="192" posY="352" sizeHeight="33" sizeWidth="96" text="Start here">
+    <note opaque="true" posX="64" posY="352" sizeHeight="33" sizeWidth="96" text="Start here">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
-    <note opaque="true" posX="768" posY="160" sizeHeight="65" sizeWidth="96" text="File is NOT&#13;&#10;readable">
+    <note opaque="true" posX="640" posY="160" sizeHeight="65" sizeWidth="96" text="File is NOT&#13;&#10;readable">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
-    <note opaque="true" posX="800" posY="512" sizeHeight="65" sizeWidth="96" text="File is&#13;&#10;readable">
+    <note opaque="true" posX="672" posY="512" sizeHeight="65" sizeWidth="96" text="File is&#13;&#10;readable">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
-    <note opaque="true" posX="864" posY="32" sizeHeight="65" sizeWidth="96" text="Finish here">
+    <note opaque="true" posX="736" posY="32" sizeHeight="65" sizeWidth="96" text="Finish here">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="255;0;0"/>
       <elementParameter field="COLOR" name="NOTETXT_COLOR" value="255;255;255"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
@@ -348,15 +351,29 @@
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
     </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_OUTPUT_1"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    </subjob>
+    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="960" posY="640" trigger="true">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1"/>
+      <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+      <elementParameter field="CHECK" name="START" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+      <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+      <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+      <elementParameter field="MEMO" name="COMMENT" value=""/>
+    </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e36b023c-a921-4e26-a4ce-5f3f9141719f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>n1yIhDOT6TqbpEXZY+S1bTOmU1fyy1KuljQimi3cU/q8XP5Sv7eCseuHXWjW039mCFpeU80a1e57
-2R1WwXmbCQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cf849700-bf8c-4e7e-8626-fdbeb36162a8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+dAGe2KNABXI8wv/6UUeJqnO7xNQrHFy8F1N9xXdjV4ThLNAN07/qnYB9oohpJcrtFbkKad9+ERU
-47KPQI8NeQ==</DigestValue></Reference></SignedInfo><SignatureValue>pOkGcUgWoiwNIambnIYmfRPOSRxWWStXTNBqwWgdnJP8pOt+RVobWERDE4yEuAQCe18DDHdWpmXY
-iwEg1bJ/xfa8M4kbhn9bwJqELy4szxpyuCO7mIE9AtdY/2zUn8bxG3ZGcP6kEscZWsuFEUhEsnyA
-801bcgFcOnxoPVg6vGWTYGDjvmgSZS/6WRMXAB+1FmfAMNoDymP+O5e2al21C2OfWzBxq3AXms/x
-zMv51noX1eJlfORRt8TziRmFnXTqpSf+lpdGE+R+alqpouxIgRBTy1YR8qVVFl+CYuf3YWMnefOc
-MR7yhBiEeYVsjBnOU25BIWplRpKlLlHJrXT+Tg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_501b3d60-1fb6-4580-a214-abe7545660a5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b3iBH/OH8Wx9NTgpBj0NMNJh+QAaMVGcCqBGfa/pXbK3SLiLDMp3eSozq06HSblMtHaxWgTvzvDN
+nGDOw9yCNg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3be51f92-fe85-4a14-a2b6-5da310f8058f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>inVTEUUcQ18oOc6FghyNWc5IHIqmXINmVh7SBAnfND3rrxaoR30yEVMxNDHATcYQWg3zdhTUXc+C
+GEbMPjLE3A==</DigestValue></Reference></SignedInfo><SignatureValue>INHmDHzYf++UFDppsOzZ/Mw0ll7pcKNZ2PfVs95DU4FIyyYtbtZRM+dH09elopamKr3YMsQz0Dxa
+3+8QkCo/4jaMhAWA+mKmm+0hJbb/2W8bu8niQKETFrlBDYZclhxncZloqSsAvP8WtSxB8QcvoLnu
+Gyge9G3dUHORRZxD4PeuapkHeLnvP21PayIVTaLM/6yL9F3YKzPob78XLA6ckNJG5tO0v3kRiZaq
+JkKZ7f0R4B3cbHsR72W7WSxv0r0YgS5yPlu7RJC5m6Rebong4kTFLuvhAmi8CmanmeBAh5x34tYN
+oIlEKrepGoqHT5EiFyuIs01UbKnjRhUtVhyvog==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -378,4 +395,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cf849700-bf8c-4e7e-8626-fdbeb36162a8" Target="#_e36b023c-a921-4e26-a4ce-5f3f9141719f"><Timestamp>2021-02-26 02:26:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3be51f92-fe85-4a14-a2b6-5da310f8058f" Target="#_501b3d60-1fb6-4580-a214-abe7545660a5"><Timestamp>2021-02-26 02:56:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
