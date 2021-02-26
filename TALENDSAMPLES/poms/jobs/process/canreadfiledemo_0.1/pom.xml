@@ -34,7 +34,7 @@
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
     <talend.job.name>canReadFileDemo</talend.job.name>
-    <talend.job.id>_PWu34HcKEeuMcowyZaCUog</talend.job.id>
+    <talend.job.id>_Pj_1wHfkEeusCJuV4QEO1g</talend.job.id>
     <talend.project.id>0</talend.project.id>
     <talend.job.folder></talend.job.folder>
     <talend.job.framework></talend.job.framework>
