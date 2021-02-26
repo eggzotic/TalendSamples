@@ -45,7 +45,7 @@
       <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-      <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:i5ecBwPMIRUqchmprQrfoipTUgZ/UHGLz8uq1RuJ"/>
+      <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:2R6HUP7ns/9wdvPNyvPrSXhHz7i5xbCJkXkFySEW"/>
       <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
       <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -123,17 +123,6 @@
       <elementParameter field="TEXT" name="LABEL" value="cannotConsole"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tLogRow_3">
-        <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      </metadata>
-    </node>
-    <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="64">
-      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
-      <elementParameter field="TEXT" name="MESSAGE" value="&quot;Exited with error - check this log for more info&quot;"/>
-      <elementParameter field="TEXT" name="CODE" value="4"/>
-      <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
-      <elementParameter field="CHECK" name="EXIT_JVM" value="true"/>
-      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-      <metadata connector="FLOW" name="tDie_1">
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
@@ -257,11 +246,19 @@
         <column comment="" key="false" length="-1" name="message" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
+    <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+      <elementParameter field="TEXT" name="MESSAGE" value="&quot;Problem with file &quot; + ((String)globalMap.get(&quot;tFileExist_1_FILENAME&quot;)) + &quot; see elsewhere in this log&quot;"/>
+      <elementParameter field="TEXT" name="CODE" value="42"/>
+      <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tWarn_1"/>
+    </node>
     <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tLogRow_3">
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
     </connection>
-    <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tDie_1">
+    <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tWarn_1">
       <elementParameter field="MEMO_JAVA" name="CONDITION" value="true"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If1"/>
     </connection>
@@ -269,7 +266,7 @@
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="canNotMessage"/>
     </connection>
-    <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tDie_1">
+    <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="tWarn_1">
       <elementParameter field="MEMO_JAVA" name="CONDITION" value="true"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If2"/>
     </connection>
@@ -300,6 +297,9 @@
     <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="TRIGGER_OUTPUT_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
     </connection>
+    <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="TRIGGER_OUTPUT_2">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+    </connection>
     <note opaque="true" posX="256" posY="160" sizeHeight="65" sizeWidth="96" text="File NOT&#13;&#10;found">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
@@ -316,18 +316,16 @@
       <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
-    <note opaque="true" posX="736" posY="32" sizeHeight="65" sizeWidth="96" text="Finish here">
+    <note opaque="true" posX="960" posY="32" sizeHeight="65" sizeWidth="96" text="Failure exits&#13;&#10;here">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="255;0;0"/>
-      <elementParameter field="COLOR" name="NOTETXT_COLOR" value="255;255;255"/>
+      <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
+    </note>
+    <note opaque="true" posX="864" posY="640" sizeHeight="65" sizeWidth="96" text="Success&#13;&#10;exits here">
+      <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
       <elementParameter field="TEXT" name="FONT_SIZE" value="9"/>
     </note>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-    </subjob>
-    <subjob>
-      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
     </subjob>
@@ -356,24 +354,43 @@
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
     </subjob>
-    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="960" posY="640" trigger="true">
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_OUTPUT_2"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    </subjob>
+    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="800" posY="640" trigger="true">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1"/>
       <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
       <elementParameter field="CHECK" name="START" show="false" value="false"/>
-      <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+      <elementParameter field="TEXT" name="LABEL" value="canReadTrigger"/>
+      <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+      <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+      <elementParameter field="MEMO" name="COMMENT" value=""/>
+    </jobletNodes>
+    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="864" posY="64" trigger="true">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_2"/>
+      <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+      <elementParameter field="CHECK" name="START" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="canNotReadTrigger"/>
       <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
       <elementParameter field="CHECK" name="INFORMATION" value="false"/>
       <elementParameter field="MEMO" name="COMMENT" value=""/>
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_501b3d60-1fb6-4580-a214-abe7545660a5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b3iBH/OH8Wx9NTgpBj0NMNJh+QAaMVGcCqBGfa/pXbK3SLiLDMp3eSozq06HSblMtHaxWgTvzvDN
-nGDOw9yCNg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3be51f92-fe85-4a14-a2b6-5da310f8058f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>inVTEUUcQ18oOc6FghyNWc5IHIqmXINmVh7SBAnfND3rrxaoR30yEVMxNDHATcYQWg3zdhTUXc+C
-GEbMPjLE3A==</DigestValue></Reference></SignedInfo><SignatureValue>INHmDHzYf++UFDppsOzZ/Mw0ll7pcKNZ2PfVs95DU4FIyyYtbtZRM+dH09elopamKr3YMsQz0Dxa
-3+8QkCo/4jaMhAWA+mKmm+0hJbb/2W8bu8niQKETFrlBDYZclhxncZloqSsAvP8WtSxB8QcvoLnu
-Gyge9G3dUHORRZxD4PeuapkHeLnvP21PayIVTaLM/6yL9F3YKzPob78XLA6ckNJG5tO0v3kRiZaq
-JkKZ7f0R4B3cbHsR72W7WSxv0r0YgS5yPlu7RJC5m6Rebong4kTFLuvhAmi8CmanmeBAh5x34tYN
-oIlEKrepGoqHT5EiFyuIs01UbKnjRhUtVhyvog==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_96e30668-be53-4795-a621-733159888324"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fJada7F/vsnG8/6WISszLbYxYXohR7hQutcxZvdWToPqFkn92S+tf7lTzqLSgg8PlEibr0by6TVM
+vtIC3ZZyDw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f927090e-506d-4187-84a6-e96454bdecb1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AdLJu6SWTmL4b+pGLwZWdPvrU2mgw1ndMZ9zqUN/E6FAlUU0aPfzvS4/paA8sLKxsbw5E9L3OeYA
+iBMvGsmc7A==</DigestValue></Reference></SignedInfo><SignatureValue>Bt2KDgBky+Lf1J0Wx/GDsT8UjktUQrpPwfDmCv+yqlWnDQxwyVh8kejXF74x6+iV8jo9XfsmQbYG
+7Kh8KChSg8SAfij2uJ5i6hOXsxr6S9hSCkC22WLq25xfVOmFhp8CfIHilTNbb4Jdk26ogVnMMDEV
+UtVPW2Qz+Ztqrksl282twNla7ipQnO/gEAIDl/qHWMR89VAhhRoYyCettM772PwhXLGJkqsl0ejW
+giJ2vZ7L36lg3JvcFcQhZluEHxwbOc4REogZc7fynInaZmpK9Hq4AyutQL4FuqWN+hLxnIT+H0bS
+OCe+iEhmWIee3PcsXvwh4xkphctBawHNVXsAFQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -395,4 +412,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3be51f92-fe85-4a14-a2b6-5da310f8058f" Target="#_501b3d60-1fb6-4580-a214-abe7545660a5"><Timestamp>2021-02-26 02:56:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f927090e-506d-4187-84a6-e96454bdecb1" Target="#_96e30668-be53-4795-a621-733159888324"><Timestamp>2021-02-26 03:11:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
