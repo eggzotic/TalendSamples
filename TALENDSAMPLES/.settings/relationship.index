@@ -151,9 +151,9 @@
     "type" : "job"
   },
   "relatedItems" : [ {
-    "id" : "_DuoV0HfaEeusCJuV4QEO1g",
+    "id" : "TALENDSAMPLES:_clTv8HfkEeusCJuV4QEO1g",
     "version" : "Latest",
-    "type" : "joblet"
+    "type" : "job"
   }, {
     "id" : "DQTechnical",
     "version" : "Latest",
