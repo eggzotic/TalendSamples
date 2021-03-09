@@ -16,8 +16,10 @@
     <module>jobs/joblets/consolesuccess_0.1</module>
     <module>jobs/process/columnjointext_0.1</module>
     <module>jobs/joblets/consolemessage_0.1</module>
-    <module>jobs/process/filechecks_0.1</module>
-    <module>jobs/process/helloworld_0.1</module>
+    <module>jobs/joblets/canreadfile_0.1</module>
+    <module>jobs/process/canreadfiledemo_0.1</module>
+    <module>jobs/process/oldcanreadfiledemo_0.1</module>
+    <module>jobs/process/childJobs/canreadfile_0.1</module>
   </modules>
   <properties>
     <signer.version>7.3.1</signer.version>
