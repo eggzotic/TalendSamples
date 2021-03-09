@@ -17,6 +17,7 @@
     <module>jobs/process/columnjointext_0.1</module>
     <module>jobs/joblets/consolemessage_0.1</module>
     <module>jobs/process/filechecks_0.1</module>
+    <module>jobs/process/helloworld_0.1</module>
   </modules>
   <properties>
     <signer.version>7.3.1</signer.version>
